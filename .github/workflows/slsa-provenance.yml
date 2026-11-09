@@ -19,7 +19,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@<SHA_40_KY_TU>   # ⚠️ pin SHA, xem bên dưới
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  
 
       - name: Package Application Artifact
         run: tar -czvf release.tar.gz main.py
@@ -30,7 +30,7 @@ jobs:
           echo "hashes=$(sha256sum release.tar.gz | base64 -w0)" >> "$GITHUB_OUTPUT"
 
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@<SHA_40_KY_TU>   # ⚠️ pin SHA
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  
         with:
           name: release-artifact
           path: release.tar.gz
